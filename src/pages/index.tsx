@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
 
 const Home: NextPage = () => {
   return (
@@ -7,9 +8,26 @@ const Home: NextPage = () => {
       <Head>
         <title>PX.News</title>
       </Head>
-      <div className="flex flex-col items-center justify-center w-full h-screen">
-        <h1 className="text-3xl">The App</h1>
-      </div>
+      <main className="flex items-center max-w-6xl mx-auto px-8 min-w-[320px] gap-40 grow w-full">
+        <section>
+          <span className="text-2xl font-bold">👏 Hey, welcome</span>
+          <h1 className="text-7xl font-black mt-10">
+            News about <br />
+            the <span className="text-cyan-400">React</span> world
+          </h1>
+          <p className="mt-6 text-2xl font-bold">
+            Get access to all the publications
+            <br />
+            <span className="text-cyan-400">for $9.90 month</span>
+          </p>
+        </section>
+        <Image
+          src="/images/avatar.svg"
+          width={336}
+          height={521}
+          alt="Girl coding"
+        />
+      </main>
     </>
   )
 }
