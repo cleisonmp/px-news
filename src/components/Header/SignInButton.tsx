@@ -1,7 +1,18 @@
+import { FaGithub } from 'react-icons/fa'
+import { FiX } from 'react-icons/fi'
+
 export function SignInButton() {
+  const isUserLoggedIn = true
   return (
-    <button type="button" className="bg-gray-600 rounded-3xl w-56 h-12">
-      Sign in with GitHub
+    <button
+      type="button"
+      className="flex items-center justify-center bg-gray-600 text-white rounded-full h-12 p-4 gap-4 hover:brightness-75 transition-all"
+    >
+      <FaGithub
+        className={isUserLoggedIn ? ' text-green-400' : 'text-yellow-500'}
+      />
+      {isUserLoggedIn ? 'jhondoegithubuser' : 'Sign in with GitHub'}
+      {isUserLoggedIn && <FiX className="text-gray-500" />}
     </button>
   )
 }
