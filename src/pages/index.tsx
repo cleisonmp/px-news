@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { SubscribeButton } from '../components/Home/SubscribeButton'
 
 const Home: NextPage = () => {
   return (
@@ -15,11 +16,12 @@ const Home: NextPage = () => {
             News about <br />
             the <span className="text-cyan-400">React</span> world
           </h1>
-          <p className="mt-6 text-2xl font-bold">
+          <p className="mt-6 text-2xl font-bold mb-10">
             Get access to all the publications
             <br />
             <span className="text-cyan-400">for $9.90 month</span>
           </p>
+          <SubscribeButton />
         </section>
         <Image
           src="/images/avatar.svg"

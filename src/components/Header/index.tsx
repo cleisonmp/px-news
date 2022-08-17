@@ -13,14 +13,14 @@ export function Header() {
               className="flex flex-col justify-between text-gray-300 hover:text-white transition-colors"
             >
               <span className="flex flex-1 items-center">Home</span>
-              <span className="border-2 rounded-t border-yellow-500" />
+              <span className="border-2 rounded-t border-yellow-600" />
             </a>
             <a
               href="#"
               className="flex flex-col justify-between text-gray-300 hover:text-white transition-colors"
             >
               <span className="flex flex-1 items-center">Posts</span>
-              <span className="border-2 rounded-t border-yellow-500" />
+              <span className="border-2 rounded-t border-yellow-600" />
             </a>
           </nav>
         </div>
