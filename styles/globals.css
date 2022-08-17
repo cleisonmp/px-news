@@ -6,7 +6,7 @@ html{
   @apply text-[87.5%] md:text-[93.75%] lg:text-[100%]
 }
 body{
-  @apply bg-gray-900;
+  @apply bg-gray-900 text-gray-100;
   -webkit-font-smoothing: antialiased;
 }
 *{
