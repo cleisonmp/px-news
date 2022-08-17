@@ -6,8 +6,11 @@ html{
   @apply text-[87.5%] md:text-[93.75%] lg:text-[100%]
 }
 body{
-  @apply bg-gray-900 text-gray-100;
+  @apply bg-gray-900 text-gray-100 min-h-screen;
   -webkit-font-smoothing: antialiased;
+}
+#__next {
+	@apply flex flex-col h-screen;
 }
 *{
   @apply focus:outline-none focus:shadow-none focus:shadow-blue-400
