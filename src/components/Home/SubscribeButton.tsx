@@ -1,4 +1,10 @@
-export function SubscribeButton() {
+interface SubscribeButtonProps {
+  priceId: string
+}
+
+export function SubscribeButton({ priceId }: SubscribeButtonProps) {
+  console.log(priceId)
+
   return (
     <button
       type="button"
