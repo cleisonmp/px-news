@@ -7,7 +7,13 @@ export function SignInButton() {
 
   return (
     <button
-      onClick={() => signIn('github')}
+      onClick={() => {
+        if (session) {
+          signOut()
+        } else {
+          signIn('github')
+        }
+      }}
       type="button"
       className="flex items-center justify-center bg-gray-600 text-white rounded-full h-12 p-4 gap-4 hover:brightness-125 transition-all"
     >
