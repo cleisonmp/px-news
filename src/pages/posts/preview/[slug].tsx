@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { createPrismicClient } from '../../../services/prismic'
 import { asHTML } from '@prismicio/helpers'
-import { GetStaticProps, NextPage } from 'next'
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { useEffect } from 'react'
@@ -53,7 +53,7 @@ const Preview: NextPage<PreviewProps> = ({ post }: PreviewProps) => {
 }
 export default Preview
 
-export const getStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
     fallback: 'blocking',
@@ -95,5 +95,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
   return {
     props: { post },
+    revalidate: 60 * 60 * 24, // 24 hours
   }
 }
