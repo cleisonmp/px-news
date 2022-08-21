@@ -1,7 +1,17 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
+import { createPrismicClient } from '../../services/prismic'
 
-const Posts: NextPage = () => {
+type Post = {
+  slug: string
+  title: string
+  excerpt: string
+  updatedAt: string
+}
+interface PostsProps {
+  posts: Post[]
+}
+const Posts: NextPage<PostsProps> = ({ posts }) => {
   return (
     <>
       <Head>
@@ -9,136 +19,19 @@ const Posts: NextPage = () => {
       </Head>
       <main className="flex max-w-6xl mt-20 mx-auto px-8 min-w-[320px]">
         <div className="flex flex-col mb-20">
-          <a
-            href="#"
-            className="group flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0"
-          >
-            <time className="text-gray-500">12 de março de 2021</time>
-            <strong className="mt-4 group-hover:text-yellow-500">
-              Creating a Monorepo with Lerna & Yarn Workspaces
-            </strong>
-            <p className="mt-1 mb-8 text-gray-500">
-              In this guide, you will learn how to create a Monorepo to manage
-              multiple packages with a shared build, test, and release process.
-            </p>
-          </a>
-          <a
-            href="#"
-            className="flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0"
-          >
-            <time className="text-gray-500">12 de março de 2021</time>
-            <strong className="mt-4">
-              Creating a Monorepo with Lerna & Yarn Workspaces
-            </strong>
-            <p className="mt-1 mb-8 text-gray-500">
-              In this guide, you will learn how to create a Monorepo to manage
-              multiple packages with a shared build, test, and release process.
-            </p>
-          </a>
-          <a
-            href="#"
-            className="flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0"
-          >
-            <time className="text-gray-500">12 de março de 2021</time>
-            <strong className="mt-4">
-              Creating a Monorepo with Lerna & Yarn Workspaces
-            </strong>
-            <p className="mt-1 mb-8 text-gray-500">
-              In this guide, you will learn how to create a Monorepo to manage
-              multiple packages with a shared build, test, and release process.
-            </p>
-          </a>
-          <a
-            href="#"
-            className="flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0"
-          >
-            <time className="text-gray-500">12 de março de 2021</time>
-            <strong className="mt-4">
-              Creating a Monorepo with Lerna & Yarn Workspaces
-            </strong>
-            <p className="mt-1 mb-8 text-gray-500">
-              In this guide, you will learn how to create a Monorepo to manage
-              multiple packages with a shared build, test, and release process.
-            </p>
-          </a>
-          <a
-            href="#"
-            className="flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0"
-          >
-            <time className="text-gray-500">12 de março de 2021</time>
-            <strong className="mt-4">
-              Creating a Monorepo with Lerna & Yarn Workspaces
-            </strong>
-            <p className="mt-1 mb-8 text-gray-500">
-              In this guide, you will learn how to create a Monorepo to manage
-              multiple packages with a shared build, test, and release process.
-            </p>
-          </a>
-          <a
-            href="#"
-            className="flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0"
-          >
-            <time className="text-gray-500">12 de março de 2021</time>
-            <strong className="mt-4">
-              Creating a Monorepo with Lerna & Yarn Workspaces
-            </strong>
-            <p className="mt-1 mb-8 text-gray-500">
-              In this guide, you will learn how to create a Monorepo to manage
-              multiple packages with a shared build, test, and release process.
-            </p>
-          </a>
-          <a
-            href="#"
-            className="flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0"
-          >
-            <time className="text-gray-500">12 de março de 2021</time>
-            <strong className="mt-4">
-              Creating a Monorepo with Lerna & Yarn Workspaces
-            </strong>
-            <p className="mt-1 mb-8 text-gray-500">
-              In this guide, you will learn how to create a Monorepo to manage
-              multiple packages with a shared build, test, and release process.
-            </p>
-          </a>
-          <a
-            href="#"
-            className="flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0"
-          >
-            <time className="text-gray-500">12 de março de 2021</time>
-            <strong className="mt-4">
-              Creating a Monorepo with Lerna & Yarn Workspaces
-            </strong>
-            <p className="mt-1 mb-8 text-gray-500">
-              In this guide, you will learn how to create a Monorepo to manage
-              multiple packages with a shared build, test, and release process.
-            </p>
-          </a>
-          <a
-            href="#"
-            className="flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0"
-          >
-            <time className="text-gray-500">12 de março de 2021</time>
-            <strong className="mt-4">
-              Creating a Monorepo with Lerna & Yarn Workspaces
-            </strong>
-            <p className="mt-1 mb-8 text-gray-500">
-              In this guide, you will learn how to create a Monorepo to manage
-              multiple packages with a shared build, test, and release process.
-            </p>
-          </a>
-          <a
-            href="#"
-            className="flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0"
-          >
-            <time className="text-gray-500">12 de março de 2021</time>
-            <strong className="mt-4">
-              Creating a Monorepo with Lerna & Yarn Workspaces
-            </strong>
-            <p className="mt-1 mb-8 text-gray-500">
-              In this guide, you will learn how to create a Monorepo to manage
-              multiple packages with a shared build, test, and release process.
-            </p>
-          </a>
+          {posts.map((post, index) => (
+            <a
+              href={`posts/${post.slug}`}
+              key={index}
+              className="group flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0"
+            >
+              <time className="text-gray-500">{post.updatedAt}</time>
+              <strong className="mt-4 group-hover:text-yellow-500">
+                {post.title}
+              </strong>
+              <p className="mt-1 mb-8 text-gray-500">{post.excerpt}</p>
+            </a>
+          ))}
         </div>
       </main>
     </>
@@ -146,3 +39,36 @@ const Posts: NextPage = () => {
 }
 
 export default Posts
+
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = createPrismicClient()
+
+  const response = await prismic.getAllByType('post', {
+    orderings: [
+      { field: 'document.first_publication_date', direction: 'desc' },
+    ],
+  })
+  const posts = response.map((post) => {
+    return {
+      slug: post.uid,
+      title: post.data.title,
+      excerpt:
+        post.data.content
+          .find((content: any) => content.type === 'paragraph')
+          ?.text.substring(0, 300) + '...' ?? '',
+      updatedAt: new Date(post.last_publication_date).toLocaleDateString(
+        'pt-BR',
+        {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric',
+        },
+      ),
+    }
+  })
+  console.log('prismic posts ')
+  console.log(posts)
+  // console.log(JSON.stringify(response, null, 2))
+
+  return { props: { posts } }
+}
