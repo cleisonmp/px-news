@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import { createPrismicClient } from '../../services/prismic'
 
 type Post = {
@@ -20,17 +21,15 @@ const Posts: NextPage<PostsProps> = ({ posts }) => {
       <main className="flex max-w-6xl mt-20 mx-auto px-8 min-w-[320px]">
         <div className="flex flex-col mb-20">
           {posts.map((post, index) => (
-            <a
-              href={`posts/${post.slug}`}
-              key={index}
-              className="group flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0"
-            >
-              <time className="text-gray-500">{post.updatedAt}</time>
-              <strong className="mt-4 group-hover:text-yellow-500">
-                {post.title}
-              </strong>
-              <p className="mt-1 mb-8 text-gray-500">{post.excerpt}</p>
-            </a>
+            <Link href={`posts/${post.slug}`} key={index}>
+              <a className="group flex flex-col first:mt-0 mt-8 border-b border-gray-600 last:border-0">
+                <time className="text-gray-500">{post.updatedAt}</time>
+                <strong className="mt-4 group-hover:text-yellow-500">
+                  {post.title}
+                </strong>
+                <p className="mt-1 mb-8 text-gray-500">{post.excerpt}</p>
+              </a>
+            </Link>
           ))}
         </div>
       </main>
@@ -66,8 +65,8 @@ export const getStaticProps: GetStaticProps = async () => {
       ),
     }
   })
-  console.log('prismic posts ')
-  console.log(posts)
+  // console.log('prismic posts ')
+  // console.log(posts)
   // console.log(JSON.stringify(response, null, 2))
 
   return { props: { posts } }

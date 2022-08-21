@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { ActiveLink } from './ActiveLink'
 import { SignInButton } from './SignInButton'
 
 export function Header() {
@@ -8,20 +9,8 @@ export function Header() {
         <div className="flex gap-20">
           <Image src="/images/logo.svg" alt="" width={110} height={31} />
           <nav className="flex gap-8 h-20 ">
-            <a
-              href="#"
-              className="flex flex-col justify-between text-gray-300 hover:text-white transition-colors"
-            >
-              <span className="flex flex-1 items-center">Home</span>
-              <span className="border-2 rounded-t border-yellow-600" />
-            </a>
-            <a
-              href="#"
-              className="flex flex-col justify-between text-gray-300 hover:text-white transition-colors"
-            >
-              <span className="flex flex-1 items-center">Posts</span>
-              <span className="border-2 rounded-t border-yellow-600" />
-            </a>
+            <ActiveLink title="Home" href="/" />
+            <ActiveLink title="Posts" href="/posts" />
           </nav>
         </div>
         <SignInButton />
