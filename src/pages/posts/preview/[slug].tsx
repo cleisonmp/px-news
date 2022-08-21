@@ -61,7 +61,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params?.slug ?? ''
-  console.log(slug)
 
   const prismic = createPrismicClient()
   let post = {

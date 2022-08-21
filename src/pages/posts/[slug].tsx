@@ -13,8 +13,7 @@ interface PostProps {
   }
 }
 const Post: NextPage<PostProps> = ({ post }: PostProps) => {
-  const { slug, title, content, updatedAt } = post
-  console.log(slug)
+  const { title, content, updatedAt } = post
 
   return (
     <>

@@ -8,10 +8,9 @@ interface SubscribeButtonProps {
 }
 
 export function SubscribeButton({ priceId }: SubscribeButtonProps) {
-  console.log('priceId ' + priceId)
   const { data: session } = useSession()
   const router = useRouter()
-  console.log('SubscribeButton')
+
   const handleSubscribe = async () => {
     if (!session) {
       signIn('github')

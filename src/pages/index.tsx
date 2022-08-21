@@ -12,8 +12,6 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ product }) => {
-  console.log('vproduct== ' + product.priceID)
-
   return (
     <>
       <Head>
@@ -49,7 +47,6 @@ export default Home
 // getServerSideProps
 export const getStaticProps: GetStaticProps = async () => {
   const price = await stripe.prices.retrieve('price_1LXwiVIxflAC4rCq5NEft7cJ')
-  console.log('node-> ' + price.id)
 
   const product = {
     priceId: price.id,
