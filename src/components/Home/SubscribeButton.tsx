@@ -1,4 +1,5 @@
 import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 import { api } from '../../services/api'
 import { getStripeJs } from '../../services/stripe-js'
 
@@ -9,12 +10,19 @@ interface SubscribeButtonProps {
 export function SubscribeButton({ priceId }: SubscribeButtonProps) {
   console.log('priceId ' + priceId)
   const { data: session } = useSession()
-
+  const router = useRouter()
+  console.log('SubscribeButton')
   const handleSubscribe = async () => {
     if (!session) {
       signIn('github')
       return
     }
+
+    if (session.userActiveSubscription) {
+      router.push('/posts')
+      return
+    }
+
     try {
       const response = await api.post('/subscribe')
       const { sessionId } = response.data

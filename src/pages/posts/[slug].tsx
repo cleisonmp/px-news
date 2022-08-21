@@ -38,7 +38,15 @@ export default Post
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context)
-  console.log(session?.expires)
+
+  if (!session?.userActiveSubscription) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
 
   const slug = context.params?.slug ?? ''
   const prismic = createPrismicClient()
