@@ -1,19 +1,27 @@
 <img align="left" src="https://github.com/cleisonmp/px-news/blob/main/public/images/logo.svg" height="50"/>
-<h2>Px.News</h2>
-
+<br/>
+<h2></h2>
 <pre>
-...
+JAMStack study project
+News blog with subscription paywall 
+
 </pre>
 
 <h3>:eye_speech_bubble: Live demo</h3>
 
 Check live demonstration [here](https://px-news.vercel.app/)
 
+`Use card number-> 4242 4242 4242 4242 to subscribe`
+
 ## 🧪 Built With
 
+- [Next.js](https://nextjs.org/)
 - [ReactJS](https://reactjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwindcss](https://tailwindcss.com/)
+- [Fauna](https://fauna.com/)
+- [Prismic](https://prismic.io/)
+- [Stripe](https://stripe.com/)
 
 ## 🚀 Clone This Project In Your Local Machine:
 
