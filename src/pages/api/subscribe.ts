@@ -25,7 +25,6 @@ const subscribe = async (
     let stripeCustomerId = user.data.stripe_customer_id
 
     if (!stripeCustomerId) {
-      console.log('customer not found creating a new one')
       const stripeCustomer = await stripe.customers.create({
         email: userEmail,
       })

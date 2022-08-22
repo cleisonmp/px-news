@@ -43,11 +43,6 @@ export default NextAuth({
     },
     async signIn({ user }) {
       const { email } = user
-      // console.log(user)
-      // console.log(account)
-      // console.log(profile)
-      // console.log(email)
-      // console.log(credentials)
 
       try {
         await fauna.query(

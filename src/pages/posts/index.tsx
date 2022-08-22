@@ -65,9 +65,6 @@ export const getStaticProps: GetStaticProps = async () => {
       ),
     }
   })
-  // console.log('prismic posts ')
-  // console.log(posts)
-  // console.log(JSON.stringify(response, null, 2))
 
   return {
     props: {
