@@ -27,6 +27,8 @@ Check live demonstration [here](https://px-news.vercel.app/)
 
 - `git clone git@github.com:cleisonmp/px-news.git`
 
+- `Generate new API and SECRET keys from your accounts`
+
 ## Author
 
 👤 **Cleison Pereira**
