@@ -36,6 +36,7 @@ const Home: NextPage<HomeProps> = ({ product }) => {
           width={336}
           height={521}
           alt="Girl coding"
+          priority
         />
       </main>
     </>
